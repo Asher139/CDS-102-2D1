@@ -119,7 +119,17 @@ qplot(
 
 ### Exercise 8
 
-  
+```{r}
+library(ggplot2)
+
+qplot(
+  x = rotten_tomatoes,
+  y = im_db,
+  geom = "smooth",
+  method = "lm",
+  data = streaming
+)
+```
 
 
 ### Exercise 9
