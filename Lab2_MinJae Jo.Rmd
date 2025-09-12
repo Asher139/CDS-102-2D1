@@ -44,7 +44,16 @@ qplot(x = im_db, binwidth = 0.5, data = streaming)
 
 
 ### Exercise 2
+```{r}
+library(ggplot2)
 
+qplot(
+  x = im_db,
+  binwidth = 0.5,
+  fill = main_language,
+  data = streaming
+)
+```
 
 
 
