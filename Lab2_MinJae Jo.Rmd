@@ -36,7 +36,10 @@ streaming <- read_csv("streaming.csv")
 ## Visualization by example
 
 ### Exercise 1
-
+```{r}
+library(ggplot2)
+qplot(x = im_db, binwidth = 0.5, data = streaming)
+```
 
 
 
