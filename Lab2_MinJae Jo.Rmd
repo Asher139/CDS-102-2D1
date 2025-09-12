@@ -89,7 +89,16 @@ qplot(
 
 ### Exercise 6
 
+```{r}
+library(ggplot2)
 
+qplot(
+  x = rotten_tomatoes,
+  y = im_db,
+  color = main_language,
+  data = streaming
+)
+```
 
 
 
