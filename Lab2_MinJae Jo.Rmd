@@ -133,3 +133,15 @@ qplot(
 
 
 ### Exercise 9
+
+```{r}
+library(ggplot2)
+
+qplot(
+  x = rotten_tomatoes,
+  y = im_db,
+  geom = c("point", "smooth"),
+  method = "lm",
+  data = streaming
+)
+```
