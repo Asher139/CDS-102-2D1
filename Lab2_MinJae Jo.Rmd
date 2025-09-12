@@ -104,7 +104,16 @@ qplot(
 
 ### Exercise 7
 
+```{r}
+library(ggplot2)
 
+qplot(
+  x = rotten_tomatoes,
+  y = im_db,
+  data = streaming,
+  facets = ~ age
+)
+```
 
 
 
