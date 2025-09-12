@@ -59,7 +59,7 @@ qplot(
 
 ### Exercise 3
 
-
+Foreign films look slightly higher on average, which is a natural phenomenon as only popular or well-received films are usually streamed.
 
 
 ### Exercise 4
