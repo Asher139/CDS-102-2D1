@@ -107,11 +107,15 @@ coffeeshop %>%
   )
 ```
 
-
-
 ### Exercise 5
 
-
+```{r, echo=FALSE}
+coffeeshop_updated <- mutate(
+  coffeeshop,
+  product_profit = sales - (cogs + total_expenses)
+)
+head(coffeeshop_updated, 10)
+```
 
 
 ### Exercise 6
