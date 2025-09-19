@@ -52,7 +52,21 @@ coffeeshop$date <- as.Date(coffeeshop$date)
 
 ### Exercise 1
 
+# i.
+select(coffeeshop, !cogs)
+#!cogs → Select all columns except for the cogs column
 
+# ii.
+select(coffeeshop, starts_with("prod"))
+#Starts_with("prod") → product_line, select a column that begins with "prod", such as product
+
+# iii.
+select(coffeeshop, contains("pe"))
+#contains("pe") → Select total_expenses column with "pe" in column name
+
+# iv.
+select(coffeeshop, caffeination = type)
+#Recall and rename the correction = type → type column
 
 
 ### Exercise 2
