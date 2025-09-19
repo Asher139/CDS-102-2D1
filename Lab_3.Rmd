@@ -139,3 +139,14 @@ coffeeshop %>%
 ```
 
 ### Exercise 7
+
+```{r, echo=FALSE}
+coffeeshop %>%
+  group_by(product_line, type) %>%
+  summarize(
+    total_profit = sum(sales - (cogs + total_expenses), na.rm = TRUE),
+    total_sales = sum(sales, na.rm = TRUE),
+    profit_margin = total_profit / total_sales
+  )
+```
+##Exercise 6 is counted by market, and Exercise 7 is counted by product.
