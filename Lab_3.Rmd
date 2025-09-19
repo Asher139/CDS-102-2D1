@@ -120,8 +120,22 @@ head(coffeeshop_updated, 10)
 
 ### Exercise 6
 
+##Colombian
+```{r, echo=FALSE}
+coffeeshop_updated %>%
+  group_by(product) %>%
+  summarize(avg_profit = mean(product_profit, na.rm = TRUE))
+```
 
-
-
+##Central
+```{r, echo=FALSE}
+coffeeshop %>%
+  group_by(market) %>%
+  summarize(
+    total_profit = sum(sales - (cogs + total_expenses), na.rm = TRUE),
+    total_sales = sum(sales, na.rm = TRUE),
+    profit_margin = total_profit / total_sales
+  )
+```
 
 ### Exercise 7
