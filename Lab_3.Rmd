@@ -71,7 +71,17 @@ select(coffeeshop, caffeination = type)
 
 ### Exercise 2
 
-
+```{r, echo=FALSE}
+# i. coffeeshop
+coffeeshop %>%
+  select(caffeination = type)
+```
+```{r, echo=FALSE}
+# ii. coffeeshop
+coffeeshop %>%
+  select(starts_with("prod")) %>%
+  filter(product == "Darjeeling")
+```
 
 
 
