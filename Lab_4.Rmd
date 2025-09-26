@@ -78,8 +78,19 @@ brauer3 <- brauer2 %>%
 
 ### Exercise 3
 
+```{r}
+library(tidyr)
 
+brauer4 <- brauer3 %>%
 
+  separate(sample, into = c("nutrient", "rate"), sep = 1, convert = TRUE) %>%
+  
+
+  separate(NAME,
+           into = c("gene_name", "biological_process", "molecular_function", "systematic_id", "number"),
+           sep = "\\|\\|")
+
+```
 
 ### Exercise 4
 
