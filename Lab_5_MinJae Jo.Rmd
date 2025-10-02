@@ -101,9 +101,18 @@ tow_make_count_4 <- tow_make_count %>%
 
 
 ### Exercise 5
+```{r}
+towed_clean <- towed_renamed_2 %>%
+  mutate(
+    make = recode(
+      make,
+      DODD = "DODG",
+      CHEVV = "CHEV", 
+      TOYTA = "TOYT"
+    )
+  )
 
-
-
+```
 
 ### Exercise 6
 
