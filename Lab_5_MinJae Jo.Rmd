@@ -127,9 +127,16 @@ towed_partial_clean <- towed_renamed_2 %>%
 ```
 
 ### Exercise 7
+```{r}
+towed_partial_clean <- towed_partial_clean %>%
+  mutate(
+    make = recode(
+      make,
+      JAG = "JAGU"
+    )
+  )
 
-
-
+```
 
 ### Exercise 8
 
