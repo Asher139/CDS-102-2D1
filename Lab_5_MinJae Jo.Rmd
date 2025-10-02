@@ -139,8 +139,18 @@ towed_partial_clean <- towed_partial_clean %>%
 ```
 
 ### Exercise 8
-
-
+```{r}
+towed_make_clean <- towed_partial_clean %>%
+  mutate(
+    make = recode(
+      make,
+      "DODD" = "DODG",   # Dodge
+      "D0DD" = "DODG",   # sometimes a zero sneaks in
+      "BUCI" = "BUIC",   # Buick
+      "JAG"  = "JAGU"    # Jaguar (per VTR-249.pdf)
+    )
+  )
+```
 
 
 ## Additional questions
@@ -151,3 +161,5 @@ towed_partial_clean <- towed_partial_clean %>%
 
 
 ### Question 2
+
+
