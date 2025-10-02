@@ -40,7 +40,7 @@ towed <- read_rds("towed_vehicles.rds")
 ## Exercises
 
 ### Exercise 1
-```{r}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 towed_renamed <- towed %>%
   rename(
     tow_date          = `Tow Date`,
@@ -61,6 +61,12 @@ colnames(towed_renamed)
 
 ### Exercise 2
 
+```{r}
+library(lubridate)
+
+towed_renamed_2 <- towed_renamed %>%
+  mutate(tow_date = mdy(tow_date))
+```
 
 
 
