@@ -115,9 +115,16 @@ towed_clean <- towed_renamed_2 %>%
 ```
 
 ### Exercise 6
-
-
-
+```{r}
+towed_partial_clean <- towed_renamed_2 %>%
+  mutate(
+    make = recode(
+      make,
+      DODD = "DODG",
+      BUCI = "BUIC"
+    )
+  )
+```
 
 ### Exercise 7
 
