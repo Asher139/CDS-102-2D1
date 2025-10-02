@@ -61,7 +61,7 @@ colnames(towed_renamed)
 
 ### Exercise 2
 
-```{r}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(lubridate)
 
 towed_renamed_2 <- towed_renamed %>%
@@ -73,7 +73,7 @@ class(towed_renamed_2$tow_date)
 
 
 ### Exercise 3
-```{r}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 tow_make_count <- towed_renamed_2 %>%
   count(make)
 
@@ -85,8 +85,19 @@ tow_make_count %>%
 
 
 ### Exercise 4
+```{r}
+tow_make_count_1 <- tow_make_count %>%
+  slice(1:20)
 
+tow_make_count_2 <- tow_make_count %>%
+  slice(21:40)
 
+tow_make_count_3 <- tow_make_count %>%
+  slice(41:60)
+
+tow_make_count_4 <- tow_make_count %>%
+  slice(61:80)
+```
 
 
 ### Exercise 5
