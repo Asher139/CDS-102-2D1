@@ -66,13 +66,22 @@ library(lubridate)
 
 towed_renamed_2 <- towed_renamed %>%
   mutate(tow_date = mdy(tow_date))
+str(towed_renamed_2)
+class(towed_renamed_2$tow_date)
 ```
 
 
 
 ### Exercise 3
+```{r}
+tow_make_count <- towed_renamed_2 %>%
+  count(make)
 
+nrow(tow_make_count)
 
+tow_make_count %>% 
+  filter(n == 1)
+```
 
 
 ### Exercise 4
