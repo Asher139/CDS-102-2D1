@@ -157,9 +157,9 @@ towed_make_clean <- towed_partial_clean %>%
 
 ### Question 1
 
-
+-The most heavily imbued car manufacturer is the first value of the count (make, sort=TRUE) result.
 
 
 ### Question 2
 
-
+-The most impounded date is the first row of count(tow_date, sort=TRUE), and the least impounded date is the last row of the same table.
