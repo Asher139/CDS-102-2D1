@@ -45,6 +45,19 @@ knitr::opts_chunk$set(
 
 ## Exercise 1
 
+```{r}
+savings <- 0
+income <- 58000
+interest_rate <- 0.06
+savings_rate <- 0.10
+
+for (year in 22:65) {
+  savings <- savings + (income * savings_rate) + (savings * interest_rate)
+}
+
+savings
+```
+
 
 
 
