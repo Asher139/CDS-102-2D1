@@ -62,8 +62,11 @@ savings
 
 
 ## Exercise 2
-
-
+```{r}
+final_savings <- 1158597
+annual_withdrawal <- final_savings * 0.04
+annual_withdrawal
+```
 
 
 ## Exercise 3
