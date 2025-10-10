@@ -85,8 +85,22 @@ savings
 ```
 
 ## Exercise 4
+```{r}
+savings <- 0
+income <- 58000
+interest_rate <- 0.06
+savings_rate <- 0.10
+employer_match <- 0.05
 
+for(year in 22:65){
+  savings <- savings + (income * (savings_rate + employer_match)) + (savings * interest_rate)
+  income <- income + 1000
+}
 
-
+savings
+```
 
 ## Exercise 5
+
+
+
