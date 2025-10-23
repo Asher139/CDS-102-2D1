@@ -56,8 +56,25 @@ set.seed(42)
 
 
 ### Exercise 2
+```{r, echo=FALSE, warning=FALSE}
+library(ggplot2)
+library(dplyr)
+library(HistData)
 
+data("Arbuthnot")
 
+Arbuthnot_clean <- Arbuthnot |> distinct(Year, .keep_all = TRUE) |>
+  mutate(Ratio = Males / Females)
+ggplot(data = Arbuthnot_clean) +
+  geom_boxplot(aes(x = "", y = Ratio)) +
+  coord_flip() +
+  labs(title = "Arbuthnot birth ratio (Males/Females): Boxplot",
+       x = NULL, y = "Ratio")
+ggplot(data = Arbuthnot_clean, aes(x = Ratio, y = ..density..)) +
+  geom_histogram(binwidth = 0.01, color = "white") +
+  labs(title = "Arbuthnot birth ratio (Males/Females): PMF",
+       x = "Ratio", y = "Probability density")
+```
 
 
 ### Exercise 3
