@@ -92,9 +92,18 @@ y = "Probability density"
 ```
 
 ### Exercise 4
+```{r, echo=FALSE, warning=FALSE}
+Arbuthnot_clean %>%
+summarize(
+mean = mean(Ratio),
+median = median(Ratio),
+sd = sd(Ratio),
+iqr = IQR(Ratio),
+min = min(Ratio),
+max = max(Ratio)
+)
 
-
-
+```
 
 ## `infer`ing a trend
 
