@@ -79,8 +79,17 @@ ggplot(data = Arbuthnot_clean, aes(x = Ratio, y = ..density..)) +
 
 ### Exercise 3
 
+```{r, echo=FALSE, warning=FALSE}
+ggplot(data = Arbuthnot_clean, aes(x = Ratio, y = after_stat(density))) +
+geom_histogram(binwidth = 0.01, fill = "lightblue", color = "white", alpha = 0.6) +
+geom_density(color = "red", linewidth = 1) +
+labs(
+title = "Arbuthnot birth ratio (Males/Females): PMF + Density",
+x = "Ratio",
+y = "Probability density"
+)
 
-
+```
 
 ### Exercise 4
 
