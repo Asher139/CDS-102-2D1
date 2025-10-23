@@ -114,8 +114,24 @@ library(infer)
 ```
 
 ### Exercise 5
+```{r, echo=FALSE, warning=FALSE}
+Arbuthnot_null <- Arbuthnot_clean %>%
+specify(formula = Ratio ~ NULL) %>%
+hypothesize(null = "point", mu = 1) %>%
+generate(reps = 10000, type = "bootstrap") %>%
+calculate(stat = "mean")
 
+Arbuthnot_obs_stat <- Arbuthnot_clean %>%
+specify(Ratio ~ NULL) %>%
+calculate(stat = "mean")
 
+Arbuthnot_null %>%
+get_p_value(obs_stat = Arbuthnot_obs_stat, direction = "two_sided")
 
+Arbuthnot_null %>%
+visualize() +
+shade_p_value(obs_stat = Arbuthnot_obs_stat, direction = "two_sided")
+```
+-The null hypothesis assumes that the average ratio of male to female births is 1, meaning there’s no real difference between them. The alternative hypothesis suggests that the ratio is not exactly 1. Because this is a two-sided test, both higher and lower differences are considered. If the p-value ends up being less than 0.05, we reject the null hypothesis and say that the difference between male and female birth ratios is statistically significant.
 
 ### Exercise 6
