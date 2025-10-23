@@ -106,6 +106,12 @@ max = max(Ratio)
 ```
 
 ## `infer`ing a trend
+```{r, echo=FALSE, warning=FALSE}
+if(!require(infer)){
+install.packages("infer")
+}
+library(infer)
+```
 
 ### Exercise 5
 
