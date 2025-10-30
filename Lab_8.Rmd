@@ -1,0 +1,86 @@
+---
+title: "Lab 8 - Basketball and Hot Hands"
+author: "MinJae Jo"
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+    highlight: tango
+    toc: false
+    df_print: kable
+    fig_caption: no
+    number_sections: no
+    dev: pdf
+  html_document:
+    highlight: tango
+    self_contained: true
+    theme: paper
+    toc: no
+    df_print: kable
+    fig_caption: no
+    number_sections: no
+    smart: yes
+    dev: svg
+  github_document:
+    html_preview: false
+    toc: true
+    toc_depth: 4
+    dev: svg
+    df_print: kable
+geometry: margin=1in
+fontsize: 11pt
+documentclass: article
+---
+
+```{r setup, include = FALSE}
+# DO NOT ALTER CODE IN THIS CHUNK
+# Set knitr options
+knitr::opts_chunk$set(echo = TRUE)
+# Load required packages
+suppressPackageStartupMessages(library(tidyverse, quietly = TRUE))
+# Load the dataset and source function
+kobe_basket <- read_rds("kobe_basket.rds")
+source("calc_streak.R")
+```
+
+* * *
+
+## Lab report
+
+## Exercises
+
+#### Exercise 1
+-A streak length of 1 means Kobe made one successful shot before missing the next one, showing a short success run. A streak length of 0 means he missed a shot without making any successful ones before it. In simple terms, the streak measures how many shots in a row he made before missing. The longer the streak, the more consistent his success was at that moment. This helps us explore whether his shooting streaks happen by chance or if there’s evidence of a real “hot hand” pattern in his performance.
+
+
+#### Exercise 2
+-Kobe’s streak lengths from the 2009 NBA Finals mostly showed short streaks, with 0 and 1 being the most common. This means he often made one shot before missing the next. His longest streak was 4, showing that while he had moments of consistency, long streaks were rare. Overall, the data suggests that Kobe’s performance looked normal and didn’t strongly support the “hot hand” idea.
+
+
+
+#### Exercise 3
+-Using an unfair coin with P (heads)=0.2 P(heads)=0.2, I set a fresh seed and sampled 100 flips; in R: set.seed(43021); coin_outcomes <- c("heads","tails"); sim_unfair <- sample(coin_outcomes, size = 100, replace = TRUE, prob = c(0.2, 0.8)); sum(sim_unfair == "heads"), which gave me 21 heads (about what you’d expect around 20 when the head chance is 20%).
+
+
+
+#### Exericse 4
+```{r}
+shot_outcomes <- c("H", "M")
+sim_basket <- sample(shot_outcomes, size = 133, replace = TRUE, prob = c(0.45, 0.55))
+```
+
+
+## Additional questions
+
+#### Question 1
+-To compute the streak lengths, I used the calc_streak() function on sim_basket and saved it as sim_streak. Since sim_basket is a vector, I didn’t need the dollar sign.
+
+
+#### Question 2
+-The distribution of streak lengths for the simulated shooter with a 45% shooting rate mostly shows short streaks of 0 or 1, meaning the player often missed right after making a shot. The typical streak length is around 1, and the longest streak in 133 shots was usually about 4 or 5. The histogram would be right-skewed, with many short streaks and only a few long ones.
+
+#### Question 3
+-If I ran the simulation again, I would expect the streak distribution to look somewhat similar but not exactly the same. Because each run is random, the exact streak lengths and counts might change a little, but the overall pattern—mostly short streaks with a few long ones—should stay the same. This happens because randomness causes small differences even when the probability stays constant.
+
+
+#### Question 4
+-Kobe Bryant’s distribution of streak lengths looks very similar to the simulated shooter’s distribution. Both have many short streaks and only a few long ones. This suggests that Kobe’s shooting pattern could be explained by random chance rather than a true “hot hand.” His data doesn’t strongly support the idea that he got significantly better after making several shots in a row.
