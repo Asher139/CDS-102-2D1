@@ -48,7 +48,7 @@ options(tigris_use_cache = TRUE)
 ## Exercises
 
 #### Exercise 1
-```{r}
+```{r, echo=FALSE}
 library(tidycensus)
 va_pop_2010 <- get_decennial(
   geography = "county",
@@ -72,11 +72,30 @@ va_pop_2010 %>%
 
 
 #### Exercise 3
-
-
+```{r, echo=FALSE}
+va_tracts_2010 <- get_decennial(
+  geography = "tract",
+  state = "VA",
+  variables = c(
+    "P001001",  # total population
+    "P003002",  # white population
+    "H001001",  # total number of housing units
+    "H004002",  # housing units with mortgages
+    "H004003"   # housing units owned fully (no mortgage)
+  ),
+  year = 2010
+)
+```
 #### Exercise 4
+```{r}
+library(tidyr)
 
-
+va_tracts_wide <- va_tracts_2010 %>%
+  pivot_wider(
+    names_from = variable,
+    values_from = value
+  )
+```
 #### Exercise 5
 
 
