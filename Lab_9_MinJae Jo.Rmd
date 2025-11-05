@@ -126,3 +126,16 @@ ggplot(va_tracts_final, aes(y = pct_owned)) + geom_boxplot() +
   labs(y = "Percent Owner-Occupied", title = "Distribution: pct_owned")
 ```
 #### Exercise 7
+```{r, echo=FALSE}
+library(ggplot2)
+
+ggplot(va_tracts_final, aes(x = pct_nonwhite, y = pct_owned)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  labs(
+    x = "Percent Non-White",
+    y = "Percent Owner-Occupied Homes",
+    title = "Relationship between Racial Composition and Home Ownership in Virginia (2010)"
+  ) +
+  theme_minimal()
+```
