@@ -97,8 +97,15 @@ va_tracts_wide <- va_tracts_2010 %>%
   )
 ```
 #### Exercise 5
+```{r}
+library(dplyr)
 
-
+va_tracts_final <- va_tracts_wide %>%
+  mutate(
+    pct_nonwhite = ((P001001 - P003002) / P001001) * 100,
+    pct_owned = ((H004002 + H004003) / H001001) * 100
+  )
+```
 #### Exercise 6
 
 
