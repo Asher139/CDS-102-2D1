@@ -107,6 +107,22 @@ va_tracts_final <- va_tracts_wide %>%
   )
 ```
 #### Exercise 6
+```{r, echo=FALSE}
+library(ggplot2)
+library(tidyr)
 
+va_tracts_final %>%
+  pivot_longer(cols = c(pct_nonwhite, pct_owned),
+               names_to = "metric", values_to = "value") %>%
+  ggplot(aes(x = value)) +
+  geom_histogram(bins = 30) +
+  facet_wrap(~ metric, scales = "free_x") +
+  labs(x = "Percent", y = "Count", title = "Distributions of New Percentage Columns")
 
+ggplot(va_tracts_final, aes(y = pct_nonwhite)) + geom_boxplot() +
+  labs(y = "Percent Non-White", title = "Distribution: pct_nonwhite")
+
+ggplot(va_tracts_final, aes(y = pct_owned)) + geom_boxplot() +
+  labs(y = "Percent Owner-Occupied", title = "Distribution: pct_owned")
+```
 #### Exercise 7
