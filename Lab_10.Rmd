@@ -56,14 +56,13 @@ test <- read_csv("housing_test.csv")
 
 
 #### Exercise 3
-
 i. Median_income showed the most pronounced relationship with house prices.
 
 ii. House prices seem up to about half a million, but the value is cut, so the accuracy of linear models can decrease when predicting high values.
 
 
 #### Exericse 4
-
+-The category most concentrated in the lowest house price was INLAND.
 
 
 
