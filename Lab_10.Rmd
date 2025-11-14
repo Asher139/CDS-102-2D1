@@ -42,7 +42,10 @@ test <- read_csv("housing_test.csv")
 * * *
 
 ## Lab report
-
+```{r}
+str(train)
+str(test)
+```
 ## Exercises
 
 #### Exercise 1
@@ -67,7 +70,7 @@ ii. House prices seem up to about half a million, but the value is cut, so the a
 
 
 #### Exericse 5
-
+-The 5-fold validation RMSE of this model is about 84,000. In other words, when predicting a house price with just the median_income alone, there is an error of about $80,000 on average.
 
 
 
