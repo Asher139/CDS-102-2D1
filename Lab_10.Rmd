@@ -75,7 +75,7 @@ ii. House prices seem up to about half a million, but the value is cut, so the a
 
 
 #### Exericse 6
-
+-The cross-validation RMSE was much lower in the model created by adding all variables. Therefore, the prediction performance was clearly better than when using only media_income.
 
 
 
