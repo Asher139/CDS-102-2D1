@@ -80,3 +80,4 @@ ii. House prices seem up to about half a million, but the value is cut, so the a
 
 
 #### Exericse 7
+-The test RMSE was slightly higher than the cross-validation RMSE when the model with the best performance was applied to the test data. It is natural for the error to be slightly larger because it is the first time predicting new data. Still, the difference does not widen significantly, so it can be seen that the model tends to predict stably and not overfitting.
