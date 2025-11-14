@@ -1,0 +1,80 @@
+---
+title: "Lab 10: Predicting house prices"
+author: "MinJae Jo"
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+    highlight: tango
+    toc: false
+    df_print: kable
+    fig_caption: no
+    number_sections: no
+    dev: pdf
+  html_document:
+    highlight: tango
+    self_contained: true
+    theme: paper
+    toc: no
+    df_print: kable
+    fig_caption: no
+    number_sections: no
+    smart: yes
+    dev: svg
+geometry: margin=1in
+fontsize: 11pt
+documentclass: article
+---
+
+```{r setup, include = FALSE}
+# DO NOT ALTER CODE IN THIS CHUNK
+# Set knitr options
+knitr::opts_chunk$set(echo = TRUE)
+# Load required packages
+suppressPackageStartupMessages(library(tidyverse, quietly = TRUE))
+suppressPackageStartupMessages(library(modelr))
+suppressPackageStartupMessages(library(broom))
+suppressPackageStartupMessages(library(lmvar))
+# Load data
+train <- read_csv("housing_train.csv")
+test <- read_csv("housing_test.csv")
+```
+
+* * *
+
+## Lab report
+
+## Exercises
+
+#### Exercise 1
+-The test loss was slightly higher than the training and validation losses, as the model had never encountered the test data before. The difference between the losses is small, so the model does not appear to be severely overfit.
+
+
+
+#### Exercise 2
+-Areas with high home prices are mostly concentrated in coastal areas, particularly Southern California and the Bay Area.
+
+
+
+#### Exercise 3
+
+i. Median_income showed the most pronounced relationship with house prices.
+
+ii. House prices seem up to about half a million, but the value is cut, so the accuracy of linear models can decrease when predicting high values.
+
+
+#### Exericse 4
+
+
+
+
+#### Exericse 5
+
+
+
+
+#### Exericse 6
+
+
+
+
+#### Exericse 7
