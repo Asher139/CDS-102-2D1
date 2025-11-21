@@ -67,12 +67,21 @@ show_query(flights_query)
 ```
 
 ### Exercise 5
-
-
+```{r}
+flights_df <- flights_query %>%
+  collect()
+```
 
 ### Exercise 6
-
-
+```{r, echo=FALSE}
+library(ggplot2)
+ggplot(flights_df, aes(x = dep_delay)) +
+  geom_histogram(binwidth = 5, color = "white") +
+  labs(title = "Distribution of Departure Delays",
+       x = "Departure Delay (minutes)",
+       y = "Count")
+```
+- The average is much higher than the median, meaning there are many very long delays that drive the average up. While most flights don't experience significant delays, some have very long delays.
 
 ### Exercise 7
 
