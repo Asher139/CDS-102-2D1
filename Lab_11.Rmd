@@ -62,8 +62,9 @@ flights_query <- flights_tbl %>%
 ```
 
 ### Exercise 4
-
-
+```{r,echo=FALSE}
+show_query(flights_query)
+```
 
 ### Exercise 5
 
