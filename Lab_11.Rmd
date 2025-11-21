@@ -1,0 +1,96 @@
+---
+title: "Lab 11: Databases"
+author: "MinJae Jo"
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+    highlight: tango
+    toc: false
+    df_print: kable
+    fig_caption: no
+    number_sections: no
+    dev: pdf
+geometry: margin=1in
+fontsize: 11pt
+documentclass: article
+---
+
+```{r setup, include = FALSE}
+# DO NOT ALTER THIS CHUNK
+knitr::opts_chunk$set(
+  echo = TRUE,
+  eval = TRUE,
+  fig.width = 5,
+  fig.asp = 0.618,
+  out.width = "70%",
+  dpi = 120,
+  fig.align = "center",
+  cache = FALSE
+)
+
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(dbplyr))
+suppressPackageStartupMessages(library(RSQLite))
+if(file.exists("nycflights13.sqlite") == FALSE){
+  dbplyr::nycflights13_sqlite(path = ".")
+}
+```
+
+
+## Lab report
+
+### Exercise 1
+```{r}
+library(DBI)
+library(RSQLite)
+library(dbplyr)
+
+con <- dbConnect(SQLite(), "nycflights13.sqlite")
+```
+
+
+### Exercise 2
+```{r}
+library(dbplyr)
+flights_tbl <- tbl(con, "flights")
+```
+
+### Exercise 3
+```{r}
+flights_query <- flights_tbl %>%
+  select(year, month, day, hour, dep_delay, origin)
+```
+
+### Exercise 4
+
+
+
+### Exercise 5
+
+
+
+### Exercise 6
+
+
+
+### Exercise 7
+
+
+
+### Exercise 8
+
+
+
+### Exercise 9
+
+
+
+### Exercise 10
+
+
+
+### Exercise 11
+
+
+
+### Exercise 12
