@@ -113,14 +113,38 @@ show_query(joined_query)
 
 
 ### Exercise 10
-```{r}
+```{r, echo=FALSE}
 joined_query <- flights_query %>%
   left_join(weather_query,
             by = c("origin", "year", "month", "day", "hour"))
+
 ```
+- Each row shows one flight with weather conditions at sa airport.
 
+```{r}
+joined_df <- joined_query %>% collect()
+```
 ### Exercise 11
+```{r, echo=FALSE, warning=FALSE}
+library(ggplot2)
 
+# Scatter plot 1: dep_delay vs precip
+ggplot(joined_df, aes(x = precip, y = dep_delay)) +
+  geom_point(alpha = 0.3) +
+  labs(
+    title = "Departure Delay vs Precipitation",
+    x = "Precipitation (mm)",
+    y = "Departure Delay (minutes)"
+  )
 
+# Scatter plot 2: dep_delay vs wind_speed
+ggplot(joined_df, aes(x = wind_speed, y = dep_delay)) +
+  geom_point(alpha = 0.3) +
+  labs(
+    title = "Departure Delay vs Wind Speed",
+    x = "Wind Speed",
+    y = "Departure Delay (minutes)"
+  )
+```
 
 ### Exercise 12
