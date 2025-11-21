@@ -103,7 +103,13 @@ show_query(weather_query)
 
 
 ### Exercise 9
+```{r, echo=FALSE}
+joined_query <- flights_query %>%
+  left_join(weather_query,
+            by = c("origin", "year", "month", "day", "hour"))
 
+show_query(joined_query)
+```
 
 
 ### Exercise 10
