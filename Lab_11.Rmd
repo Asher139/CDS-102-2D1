@@ -146,5 +146,6 @@ ggplot(joined_df, aes(x = wind_speed, y = dep_delay)) +
     y = "Departure Delay (minutes)"
   )
 ```
-
+-As it rains more, dep_delay tends to increase slightly. However, it is not a very strong correlation because the dots are spread out. Wind_speed seems to have little apparent relationship with delay.
 ### Exercise 12
+- When I looked at the two scatterplots, the correlation between bad weather and delay in departure did not seem very strong. There were a few times when the delay was longer when it was raining heavily or windy, but most of the points were scattered without any obvious shape. Therefore, the overall pattern appeared weaker than expected. But on more thought, this dataset only includes flights that actually left. Flights canceled due to bad weather are not included in the data at all. This creates a kind of survival bias, as it only analyzes flights that "survived" from bad weather. Including canceled flights, the impact of bad weather on delays would seem greater. Therefore, the weak pattern in the graph may be due to the worst cases not appearing in the dataset at all.
