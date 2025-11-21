@@ -92,7 +92,14 @@ iii. The origin column indicates at which airport (JFK, LGA, EWR) the meteorolog
 
 
 ### Exercise 8
+```{r, echo=FALSE}
+weather_tbl <- tbl(con, "weather")
 
+weather_query <- weather_tbl %>%
+  select(origin, year, month, day, hour, temp, wind_speed, precip)
+
+show_query(weather_query)
+```
 
 
 ### Exercise 9
