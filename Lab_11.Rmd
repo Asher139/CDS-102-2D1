@@ -84,7 +84,11 @@ ggplot(flights_df, aes(x = dep_delay)) +
 - The average is much higher than the median, meaning there are many very long delays that drive the average up. While most flights don't experience significant delays, some have very long delays.
 
 ### Exercise 7
+i. Each row represents a weather observation record of a specific date and time at an airport in one of the JFK/LGA/EWRs.
 
+ii. The precip column contains information related to rain or precipitation.
+
+iii. The origin column indicates at which airport (JFK, LGA, EWR) the meteorological measurements were made.
 
 
 ### Exercise 8
