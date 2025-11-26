@@ -28,4 +28,10 @@ Column
 
 Sidebar {.sidebar}
 -------------------------------------
+```{r}
+library(tidyverse)
+library(plotly)
+library(crosstalk)
 
+pokemon <- read_csv("pokemon.csv")
+```
