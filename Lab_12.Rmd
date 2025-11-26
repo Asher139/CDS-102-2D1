@@ -25,6 +25,14 @@ Column
 ### Component 1
 
 ```{r}
+p1 <- pokemon %>%
+  mutate(`Type 1` = reorder(`Type 1`, Total, FUN = median)) %>%
+  ggplot(aes(x = `Type 1`, y = Total, fill = `Type 1`)) +
+  geom_boxplot() +
+  labs(x = "Pokemon Type")
+
+ggplotly(p1)
+
 ```
 
 Column
