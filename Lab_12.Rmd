@@ -7,7 +7,16 @@ output: flexdashboard::flex_dashboard
 
 
 ```{r setup, include=FALSE}
+
 knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(ggplot2)
+library(plotly)
+library(crosstalk)
+
+pokemon <- read_csv("pokemon.csv")
+
 ```
 
 Column
@@ -24,6 +33,11 @@ Column
 ### Component 2
 
 ```{r}
+p <- ggplot(pokemon, aes(x = Defense, y = Attack, color = `Type 1`)) +
+  geom_point()
+
+ggplotly(p)
+
 ```
 
 Sidebar {.sidebar}
