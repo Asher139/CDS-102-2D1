@@ -10,3 +10,22 @@ output: flexdashboard::flex_dashboard
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+Column
+-------------------------------------
+
+### Component 1
+
+```{r}
+```
+
+Column
+-------------------------------------
+
+### Component 2
+
+```{r}
+```
+
+Sidebar {.sidebar}
+-------------------------------------
+
