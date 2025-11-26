@@ -16,6 +16,7 @@ library(plotly)
 library(crosstalk)
 
 pokemon <- read_csv("pokemon.csv")
+shared_pokemon <- SharedData$new(pokemon)
 
 ```
 
@@ -25,10 +26,14 @@ Column
 ### Component 1
 
 ```{r}
-p1 <- pokemon %>%
+ordered_types <- pokemon %>%
   mutate(`Type 1` = reorder(`Type 1`, Total, FUN = median)) %>%
-  ggplot(aes(x = `Type 1`, y = Total, fill = `Type 1`)) +
+  pull(`Type 1`) %>%
+  levels()
+
+p1 <- ggplot(shared_pokemon, aes(x = `Type 1`, y = Total, fill = `Type 1`)) +
   geom_boxplot() +
+  scale_x_discrete(limits = ordered_types) +
   labs(x = "Pokemon Type")
 
 ggplotly(p1)
