@@ -23,9 +23,10 @@ shared_pokemon <- SharedData$new(pokemon)
 Column
 -------------------------------------
 
-### Component 1
+### Boxplot of Total Stats by Pokemon Type
 
-```{r}
+
+```{r, echo=FALSE}
 ordered_types <- pokemon %>%
   mutate(`Type 1` = reorder(`Type 1`, Total, FUN = median)) %>%
   pull(`Type 1`) %>%
@@ -34,7 +35,8 @@ ordered_types <- pokemon %>%
 p1 <- ggplot(shared_pokemon, aes(x = `Type 1`, y = Total, fill = `Type 1`)) +
   geom_boxplot() +
   scale_x_discrete(limits = ordered_types) +
-  labs(x = "Pokemon Type")
+  labs(x = "Pokemon Type") +
+  theme(axis.text.x = element_text(angle = 45))
 
 ggplotly(p1)
 
@@ -43,9 +45,10 @@ ggplotly(p1)
 Column
 -------------------------------------
 
-### Component 2
+### Scatterplot of Attack vs Defense
 
-```{r}
+
+```{r, echo=FALSE}
 p <- ggplot(pokemon, aes(x = Defense, y = Attack, color = `Type 1`)) +
   geom_point()
 
