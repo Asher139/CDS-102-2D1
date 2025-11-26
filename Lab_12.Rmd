@@ -1,0 +1,12 @@
+---
+title: "Lab 11"
+author: "MinJae Jo"
+date: "`r Sys.Date()`"
+output: flexdashboard::flex_dashboard
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
